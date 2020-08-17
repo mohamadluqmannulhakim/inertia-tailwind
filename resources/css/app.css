@@ -3,3 +3,41 @@
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+
+.tw-form-group {
+    @apply mb-3;
+}
+
+.tw-input-purple {
+    @apply appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 text-gray-900 rounded-t-md;
+}
+
+.tw-input-purple:focus {
+    @apply outline-none border-purple-300 z-10;
+}
+
+.tw-input-purple::placeholder {
+    @apply text-gray-500;
+}
+
+.tw-btn-purple {
+    @apply relative w-full flex justify-center py-2 px-4 border border-transparent font-medium rounded-md text-white transition duration-150 ease-in-out;
+}
+
+.tw-btn-purple:hover {
+    @apply bg-purple-500;
+}
+
+.tw-btn-purple:focus {
+    @apply outline-none border-purple-700;
+}
+
+.tw-btn-purple:active {
+    @apply bg-purple-700;
+}
+
+@screen sm {
+    .tw-leading-5 {
+        @apply text-sm leading-5;
+    }
+}

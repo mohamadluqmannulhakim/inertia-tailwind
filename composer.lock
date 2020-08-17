@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3b2d326de7fdf2664c09faf2a907746b",
+    "content-hash": "7620332c5c3f0d8f1155f677434fb02e",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -379,16 +379,16 @@
         },
         {
             "name": "inertiajs/inertia-laravel",
-            "version": "dev-master",
+            "version": "v0.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/inertiajs/inertia-laravel.git",
-                "reference": "d09e6b1284266212dac3db3704775309c170b999"
+                "reference": "ef618736fb566e5c85d862fa0cf6061422f19046"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/inertiajs/inertia-laravel/zipball/d09e6b1284266212dac3db3704775309c170b999",
-                "reference": "d09e6b1284266212dac3db3704775309c170b999",
+                "url": "https://api.github.com/repos/inertiajs/inertia-laravel/zipball/ef618736fb566e5c85d862fa0cf6061422f19046",
+                "reference": "ef618736fb566e5c85d862fa0cf6061422f19046",
                 "shasum": ""
             },
             "require-dev": {
@@ -405,7 +405,10 @@
             "autoload": {
                 "psr-4": {
                     "Inertia\\": "src"
-                }
+                },
+                "files": [
+                    "./helpers.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -423,7 +426,7 @@
                 "inertia",
                 "laravel"
             ],
-            "time": "2019-06-21T15:47:53+00:00"
+            "time": "2020-02-28T14:50:19+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -465,6 +468,7 @@
                     "email": "jakub.onderka@gmail.com"
                 }
             ],
+            "abandoned": "php-parallel-lint/php-console-color",
             "time": "2018-09-29T17:23:10+00:00"
         },
         {
@@ -511,6 +515,7 @@
                 }
             ],
             "description": "Highlight PHP code in terminal",
+            "abandoned": "php-parallel-lint/php-console-highlighter",
             "time": "2018-09-29T18:48:56+00:00"
         },
         {
@@ -4698,9 +4703,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "inertiajs/inertia-laravel": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

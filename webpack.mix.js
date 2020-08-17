@@ -1,6 +1,8 @@
 const mix = require("laravel-mix");
 const path = require("path");
 
+var LiveReloadPlugin = require('webpack-livereload-plugin');
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -21,13 +23,18 @@ mix
     require("autoprefixer")
   ])
   .webpackConfig({
-    output: { chunkFilename: "js/[name].js?id=[chunkhash]" },
+    output: {
+      chunkFilename: "js/[name].js?id=[chunkhash]"
+    },
     resolve: {
       alias: {
         vue$: "vue/dist/vue.runtime.esm.js",
         "@": path.resolve("resources/js")
       }
-    }
+    },
+    plugins: [
+      new LiveReloadPlugin()
+    ]
   })
   .babelConfig({
     plugins: ["@babel/plugin-syntax-dynamic-import"]

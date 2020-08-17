@@ -17,73 +17,61 @@
               />
             </svg>
           </div>
-          <h2
-            class="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900"
-          >Sign in to your account</h2>
-          <p class="mt-2 text-center tw-leading-5 text-gray-600">
-            Or
-            <inertia-link
-              href="/register"
-              class="font-medium text-purple-600 hover:text-purple-500 focus:outline-none focus:underline transition ease-in-out duration-150"
-            >start your 14-day free trial</inertia-link>
-          </p>
+          <h2 class="mt-6 text-center text-3xl leading-9 font-extrabold text-grey-600">Sign Up</h2>
         </div>
-
-        <!-- Print error -->
-        <div v-if="Object.keys(errors).length > 0" class="alert mt-3">
-          <div
-            class="border border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700 text-sm"
-            v-for="(errorVal, errorindex) in errors"
-            :key="errorindex"
-          >{{ errorVal[0] }}</div>
-        </div>
-
-        <form class="mt-8" @submit.prevent="login">
+        <form class="mt-8" action="#" method="POST">
           <div class="rounded-md shadow-sm">
             <div class="tw-form-group">
               <input
+                aria-label="Full name"
+                name="name"
+                type="text"
+                required
+                class="tw-input-purple"
+                placeholder="Full name"
+              />
+            </div>
+            <div class="tw-form-group">
+              <input
                 aria-label="Email address"
-                id="email"
-                v-model="form.email"
+                name="email"
                 type="email"
                 required
-                class="tw-input-purple tw-leading-5"
+                class="tw-input-purple"
                 placeholder="Email address"
               />
             </div>
             <div class="tw-form-group">
               <input
                 aria-label="Password"
-                id="password"
-                v-model="form.password"
+                name="password"
                 type="password"
-                class="tw-input-purple tw-leading-5"
+                required
+                minlength="6"
+                class="tw-input-purple"
                 placeholder="Password"
               />
+              <small class="text-xs text-gray-600 mb-6">At least 6 characters</small>
             </div>
-          </div>
-
-          <div class="mt-6 flex items-center justify-between">
-            <div class="flex items-center">
+            <div class="tw-form-group">
               <input
-                id="remember_me"
-                v-model="form.remember_me"
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-purple-600 transition duration-150 ease-in-out"
+                aria-label="Confirm password"
+                name="confirm_password"
+                type="password"
+                required
+                minlength="6"
+                class="tw-input-purple"
+                placeholder="Confirm password"
               />
-              <label for="remember_me" class="ml-2 block tw-leading-5 text-gray-900">Remember me</label>
-            </div>
-
-            <div class="tw-leading-5">
-              <a
-                href="#"
-                class="font-medium text-purple-600 hover:text-purple-500 focus:outline-none focus:underline transition ease-in-out duration-150"
-              >Forgot your password?</a>
             </div>
           </div>
 
           <div class="mt-6">
-            <button type="submit" class="tw-btn-purple tw-leading-5 bg-purple-600">
+            <button
+              type="submit"
+              class="group tw-btn-purple tw-leading-5 mb-3 bg-purple-600"
+            >Sign Up</button>
+            <inertia-link href="/login" class="group tw-btn-purple tw-leading-5 bg-indigo-600">
               <span class="absolute left-0 inset-y-0 flex items-center pl-3">
                 <svg
                   class="h-5 w-5 text-purple-500 group-hover:text-purple-400 transition ease-in-out duration-150"
@@ -96,9 +84,20 @@
                     clip-rule="evenodd"
                   />
                 </svg>
-              </span>
-              Sign in
-            </button>
+              </span>Sign in
+            </inertia-link>
+          </div>
+
+          <div class="text-center text-sm text-gray-600 mt-4">
+            By signing up, you agree to the
+            <a
+              class="no-underline border-b border-grey-dark text-grey-dark"
+              href="#"
+            >Terms of Service</a> and
+            <a
+              class="no-underline border-b border-grey-dark text-grey-dark"
+              href="#"
+            >Privacy Policy</a>
           </div>
         </form>
       </div>
@@ -107,24 +106,7 @@
 </template>
 
 <script>
-export default {
-  props: ["successMessage", "errors"],
-  components: {},
-  data() {
-    return {
-      form: {
-        email: "as@email.com.my",
-        password: "password",
-        remember_me: "",
-      },
-    };
-  },
-  methods: {
-    login() {
-      this.$inertia.post("/login", this.form).then(() => {});
-    },
-  },
-};
+export default {};
 </script>
 
 <style>
